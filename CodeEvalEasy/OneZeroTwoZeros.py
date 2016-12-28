@@ -2,10 +2,14 @@ import sys
 
 
 def func(line):
+    numberCount = 0
     line = line.rstrip('\n').split(' ')
-    for item in line:
-        output = 1
-    return output
+
+    for x in range(1, int(line[1])):
+       zeros =  sum([1 for element in bin(x)[2:] if int(element) == 0])
+       if zeros == int(line[0]):
+           numberCount += 1
+    return numberCount
 
 
 def main(input_file):
