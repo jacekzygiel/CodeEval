@@ -2,7 +2,15 @@ import sys
 
 
 def func(line):
-    return sum(1 for x in bin(int(line)) if x == '1')
+    line = line.rstrip('\n').split(',')
+    objects = list(set(line))
+    a = 1
+    baza = []
+    for object in objects:
+        c = line.count(object)
+        b = object
+
+    return b
 
 
 def main(input_file):
@@ -13,6 +21,6 @@ def main(input_file):
 
 if __name__ == '__main__':
     try:
-        main('NumberOfOnes.txt')
+        main('TheMajorElement.txt')
     except IOError:
         main(sys.argv[1])
