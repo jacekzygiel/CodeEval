@@ -1,4 +1,5 @@
 import sys
+import os
 
 
 def func(line):
@@ -14,6 +15,6 @@ def main(input_file):
 
 if __name__ == '__main__':
     try:
-        main('RightMostChar2.txt')
+        main('{}.txt'.format(os.path.basename(sys.argv[0])[:-3]))
     except IOError:
         main(sys.argv[1])
