@@ -15,7 +15,7 @@ def prime(number):
 def func(line):
     line = map(int, line.rstrip('\n').split(','))
     primes = 0;
-    for x in range(line[0], line[1]):
+    for x in range(line[0], line[1]+1):
         if prime(x) == True:
             primes += 1
     return primes
