@@ -2,9 +2,10 @@ import sys
 
 
 def func(line):
-    line = line.rstrip('\n')
-    output = sum( int(item)**len(line) for item in line)
-    return True if int(line) == output else False
+    letters = ['0', '1', 'abc', 'def', 'ghi', 'jkl', 'mno', 'pqrs', 'tuv', 'wxyz']
+    for element in line:
+        print element
+    return 1
 
 
 def main(input_file):
@@ -15,6 +16,6 @@ def main(input_file):
 
 if __name__ == '__main__':
     try:
-        main('ArmstrongNumbers.txt')
+        main('TelephoneWords.txt')
     except IOError:
         main(sys.argv[1])
