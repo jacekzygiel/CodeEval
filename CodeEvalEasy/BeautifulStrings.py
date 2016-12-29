@@ -1,54 +1,29 @@
-'''
-Created on Nov 2, 2016
-
-@author: zygielj
-'''
 import sys
 import string
 
 
-def lowerCaseDict(shift):
-    lowerCase = string.ascii_lowercase
-    beautyLevel = {}
-    val = []
-    for x in range(0, 26):
-        val.append(x+1)
+def func(line):
+    values = []
+    chars = string.ascii_lowercase
+    value = 0
+    for x in range(1, 27):
+        values.append(x)
+    for element in line.rstrip().lower():
+        a = chars.index(element)
+        b = values[a]
+        value += 1
 
-    shifted = val[shift:] + val[:shift]
-    for x in range(0, 26):
-        beautyLevel[lowerCase[x]] = shifted[x]
-    return beautyLevel
-
-
-def letterValue(dictionary, letter):
-    letter = letter.lower()
-    try:
-        val = dictionary[letter]
-    except KeyError:
-        return 0
-    return val
+    return value
 
 
-def checkValue(input):
-    with open('input, 'r') as strings:
-        for line in strings:
-            lineVal = 0
-            maxLineVal = 0
-            for shift in range(26):
-                dictionary = lowerCaseDict(shift)
-                lineVal = 0
-                for letter in line:
-                    letVal = letterValue(dictionary, letter)
-                    lineVal += letVal
-                if maxLineVal < lineVal:
-                    maxLineVal = lineVal
-                    print shift
-            print maxLineVal
+def main(input_file):
+    with open(input_file, 'r') as testCases:
+        for test in testCases:
+            result = func(test)
+            print result
 
 if __name__ == '__main__':
     try:
-        checkValue('MixedContent.txt')
+        main('BeautifulStrings.txt')
     except IOError:
-        checkValue(sys.argv[1])
-
-
+        main(sys.argv[1])

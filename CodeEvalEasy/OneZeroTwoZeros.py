@@ -13,7 +13,7 @@ def func(line):
 
 
 def main(input_file):
-    with open(input_file, 'r') as testCases:3
+    with open(input_file, 'r') as testCases:
         for test in testCases:
             result = func(test)
             print result
