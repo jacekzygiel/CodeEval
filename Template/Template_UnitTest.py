@@ -4,7 +4,8 @@ Created on Nov 9, 2016
 @author: zygielj
 '''
 import unittest
-from Template import func
+
+from CodeEvalEasy.MultipliactionTable import func
 
 
 class Test(unittest.TestCase):
