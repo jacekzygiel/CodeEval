@@ -3,8 +3,10 @@ import os
 
 
 def func(line):
-    line = line.rstrip('\n').split(',')
-    return 1
+    line = map(int, line.rstrip().split(' '))
+    ones = []
+    [ones.append(element) for element in list(set(line)) if line.count(element) == 1 ]
+    return line.index(min(ones))+1 if len(ones) != 0 else 0
 
 
 def main(input_file):
